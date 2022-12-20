@@ -1,0 +1,31 @@
+<div style="height: 90vh">
+  <p-table
+    #table
+    [value]="data"
+    [scrollable]="true"
+    scrollHeight="flex"
+    [virtualScroll]="true"
+    [virtualScrollItemSize]="32"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 4</th>
+        <th>Column 5</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-row>
+      <tr style="height:32px; text-align:center;">
+        <td>{{ row.column1 }}</td>
+        <td>{{ row.column2 }}</td>
+        <td>{{ row.column3 }}</td>
+        <td>{{ row.column4 }}</td>
+        <td>{{ row.column5 }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<button (click)="scrollTo40000()">Scroll To 40000</button>
+<button (click)="scrollToTop()">Scroll To Top</button>
